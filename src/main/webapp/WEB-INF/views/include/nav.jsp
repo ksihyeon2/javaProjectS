@@ -61,6 +61,8 @@
 	        <a href="${ctp}/study/chart2/chart" class="w3-bar-item w3-button">차트 연습2</a>
 	        <a href="${ctp}/study/captcha/randomAlphaNumeric" class="w3-bar-item w3-button">랜덤 알파 뉴메릭</a>
 	        <a href="${ctp}/study/captcha/captcha" class="w3-bar-item w3-button">캡차 연습</a>
+	        <a href="${ctp}/errorPage/errorMain" class="w3-bar-item w3-button">Error 연습</a>
+	        <a href="${ctp}/study/thumbnail/thumbnailForm" class="w3-bar-item w3-button">썸네일 연습</a>
 	      </div>
 	    </div>
 	    <div class="w3-dropdown-hover w3-hide-small">
@@ -82,7 +84,13 @@
 		  <a href="${ctp}/member/memberJoin" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Join</a>
 	  </c:if>
 	  <c:if test="${!empty sLevel}">
-	  	<a href="${ctp}/member/memberLogout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Logout</a>
+	  <div class="w3-dropdown-hover w3-hide-small">
+	  	<button class="w3-padding-large w3-button" title="More">Logout <i class="fa fa-caret-down"></i></button>  
+	  	<div class="w3-dropdown-content w3-bar-block w3-card-4">
+		  	<a href="${ctp}/member/memberLogout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Logout</a>
+		  	<a href="${ctp}/member/kakaoLogout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Kakao Logout</a>
+		  	</div>
+	  </div>
 	  </c:if>
     <!-- <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a> -->
   </div>

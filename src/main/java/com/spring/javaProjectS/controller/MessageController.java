@@ -89,6 +89,14 @@ public class MessageController {
 			model.addAttribute("msg", mid + "님 로그인 되셨습니다.");
 			model.addAttribute("url", "member/memberMain");
 		}
+		else if(msgFlag.equals("kakaoLoginOk")) {
+			model.addAttribute("msg", mid + "님 로그인 되셨습니다.");
+			model.addAttribute("url", "member/memberMain");
+		}
+		else if(msgFlag.equals("kakaoLogout")) {
+			model.addAttribute("msg", mid + "님 로그아웃 되었습니다.");
+			model.addAttribute("url", "member/memberMain");
+		}
 		else if(msgFlag.equals("memberLogout")) {
 			model.addAttribute("msg", mid + "님 로그아웃 되었습니다.");
 			model.addAttribute("url", "member/memberLogin");
@@ -161,6 +169,9 @@ public class MessageController {
 		}	else if(msgFlag.equals("pdsInputNo")) {
 			model.addAttribute("msg", "자료실 자료등록에 실패하셨습니다.");
 			model.addAttribute("url", "pds/pdsList");
+		}	else if(msgFlag.equals("midSameSearch")) {
+			model.addAttribute("msg", "해당 아이디가 존재합니다.");
+			model.addAttribute("url", "member/memberLogin");
 		}
 		
 		return "include/message";

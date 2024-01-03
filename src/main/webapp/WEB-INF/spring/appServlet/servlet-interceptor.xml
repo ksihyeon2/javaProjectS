@@ -14,17 +14,19 @@
 	<beans:bean id="level3Interceptor" class="com.spring.javaProjectS.interceptor.Level3Interceptor"/>
 	
 	<interceptors>
-		<!-- 비회원 -->
 		<interceptor>
-			<mapping path="/**"/>
-			<exclude-mapping path="/"/>
-			<exclude-mapping path="/h"/>
+			<!--  비회원  -->
+			<mapping path="/member/**"/>
+			<mapping path="/board/boardList"/>
 			<exclude-mapping path="/member/memberLogin"/>
 			<exclude-mapping path="/member/memberLogout"/>
-			<exclude-mapping path="/member/memberJoin"/>
-			<exclude-mapping path="/member/memberPwdCheck"/>
-			<exclude-mapping path="/member/memberNickCheck"/>
 			<exclude-mapping path="/member/memberIdCheck"/>
+			<exclude-mapping path="/member/memberNickCheck"/>
+			<exclude-mapping path="/member/memberJoin"/>
+			<exclude-mapping path="/member/memberEmailCheck"/>
+			<exclude-mapping path="/member/memberEmailCheckOk"/>
+			<exclude-mapping path="/member/memberEmailSearch"/>
+			<exclude-mapping path="/member/kakaoLogin"/>
 			<exclude-mapping path="/guest/**"/>
 			<exclude-mapping path="/message/**"/>
 			<beans:ref bean="level3Interceptor"/>

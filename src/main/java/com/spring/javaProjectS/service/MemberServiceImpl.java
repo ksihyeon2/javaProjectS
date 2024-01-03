@@ -55,5 +55,15 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO getMemberEmailSearch(String email) {
 		return memberDAO.getMemberEmailSearch(email);
 	}
+
+	@Override
+	public MemberVO getMemberNickNameEmailCheck(String nickName, String email) {
+		return memberDAO.getMemberNickNameEmailCheck(nickName,email);
+	}
+
+	@Override
+	public void setKaokaoMemberInput(String mid, String pwd, String nickName, String email) {
+		memberDAO.setKaokaoMemberInput(mid,pwd,nickName,email);
+	}
 	
 }

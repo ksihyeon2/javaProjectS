@@ -22,4 +22,8 @@ public interface MemberDAO {
 
 	public MemberVO getMemberEmailSearch(@Param("email") String email);
 
+	public MemberVO getMemberNickNameEmailCheck(@Param("nickName") String nickName, @Param("email") String email);
+
+	public void setKaokaoMemberInput(@Param("mid") String mid,@Param("pwd") String pwd,@Param("nickName") String nickName,@Param("email") String email);
+
 }

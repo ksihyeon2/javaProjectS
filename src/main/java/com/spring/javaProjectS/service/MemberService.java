@@ -20,4 +20,8 @@ public interface MemberService {
 
 	public MemberVO getMemberEmailSearch(String email);
 
+	public MemberVO getMemberNickNameEmailCheck(String nickName, String email);
+
+	public void setKaokaoMemberInput(String mid, String pwd, String nickName, String email);
+
 }
