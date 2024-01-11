@@ -63,6 +63,7 @@
 	        <a href="${ctp}/study/captcha/captcha" class="w3-bar-item w3-button">캡차 연습</a>
 	        <a href="${ctp}/errorPage/errorMain" class="w3-bar-item w3-button">Error 연습</a>
 	        <a href="${ctp}/study/thumbnail/thumbnailForm" class="w3-bar-item w3-button">썸네일 연습</a>
+	        <a href="${ctp}/study/payment/payment" class="w3-bar-item w3-button">결제 연습</a>
 	      </div>
 	    </div>
 	    <div class="w3-dropdown-hover w3-hide-small">

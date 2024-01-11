@@ -42,6 +42,7 @@ import com.spring.javaProjectS.common.ARIAUtil;
 import com.spring.javaProjectS.common.SecurityUtil;
 import com.spring.javaProjectS.service.StudyService;
 import com.spring.javaProjectS.vo.ChartVO;
+import com.spring.javaProjectS.vo.DbPayMentVO;
 import com.spring.javaProjectS.vo.KakaoAddressVO;
 import com.spring.javaProjectS.vo.MailVO;
 import com.spring.javaProjectS.vo.UserVO;
@@ -489,4 +490,26 @@ public class StudyController {
 		}
 	}
 	
+	
+	// 결제처리 연습 정보 입력 창 띄우기
+	@RequestMapping(value = "/payment/payment", method = RequestMethod.GET)
+	public String paymentGet() {
+		return "study/payment/payment";
+	}
+	
+	// 결제처리 연습 정보 입력 후 결제 창 띄우기
+	@RequestMapping(value = "/payment/payment", method = RequestMethod.POST)
+	public String paymentPost(Model model, HttpSession session, DbPayMentVO vo) {
+		session.setAttribute("sPaymentVO", vo);
+		model.addAttribute("vo", vo);
+		return "study/payment/sample";
+	}
+	
+	// 결제처리 연습 정보 입력 후 결제 완료 후 확인 창 띄우기
+	@RequestMapping(value = "/payment/paymentOk", method = RequestMethod.GET)
+	public String paymentOkGet(Model model, HttpSession session) {
+		DbPayMentVO vo = (DbPayMentVO)session.getAttribute("sPaymentVO");
+		model.addAttribute("vo", vo);
+		return "study/payment/paymentOk";
+	}
 }
