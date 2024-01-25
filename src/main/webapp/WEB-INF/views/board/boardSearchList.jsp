@@ -41,10 +41,9 @@
       <th>글쓴날짜</th>
       <th>조회수(좋아요)</th>
     </tr>
-    <c:set var="curScrStartNo" value="${pageVO.curScrStartNo}"/>
     <c:forEach var="vo" items="${vos}" varStatus="st">
       <tr>
-        <td>${curScrStartNo}</td>
+        <td>${st.count}</td>
         <td class="text-left">
           <a href="boardContent.bo?idx=${vo.idx}&pag=${pageVO.pag}&pageSize=${pageVO.pageSize}&flag=search&search=${pageVO.search}&searchString=${pageVO.searchString}">${vo.title}</a>
           <c:if test="${vo.hour_diff <= 24}"><img src="${ctp}/images/new.gif"/></c:if>
@@ -59,7 +58,6 @@
         <td>${vo.readNum}(${vo.good})</td>
       </tr>
       <tr><td colspan="5" class="m-0 p-0"></td></tr>
-      <c:set var="curScrStartNo" value="${curScrStartNo - 1}"/>
     </c:forEach>
   </table>
 </div>
